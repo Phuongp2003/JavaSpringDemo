@@ -1,20 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="/css/base.css">
     <link rel="stylesheet" type="text/css" href="/css/home.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#">HomeButton</a></li>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/signup">Signup</a></li>
-            <li>
-                <p th:text="${username}">Username</p>
-            </li>
-        </ul>
-    </nav>
+    <header class="header">
+        <div class="grid">
+            <nav class="navbar">
+                <ul class="navbar-list">
+                    <li class="navbar--item navbar--item-spilit">
+                        <a class="navbar--item-link" href="/home">MYPAGE</a>
+                    </li>
+                    <li class="navbar--item navbar--item-spilit">
+                        <a class="navbar--item-link" href="/bt">Bt</a>
+                    </li>
+                    <li class="navbar--item navbar--item-spilit">
+                        <a class="navbar--item-link" href="/bt">Bt</a>
+                    </li>
+                    <li class="navbar--item">
+                        <a class="navbar--item-link" href="/bt">Bt</a>
+                    </li>
+                </ul>
+                <ul class="navbar-list">
+                    <li class="navbar--item">
+                        <a class="navbar--item-link navbar--item-link-bold navbar--item-spilit" th:unless="${username}"
+                            href="/login">Login</a>
+                    </li>
+                    <li class="navbar--item">
+                        <a class="navbar--item-link navbar--item-link-bold" th:unless="${username}"
+                            href="/signup">Signup</a>
+                    </li>
+                    <li class="navbar--item navbar--item-username navbar--item-spilit" th:if="${username}"
+                        th:text="${username}">
+                        Username
+                    </li>
+                    <li class="navbar--item">
+                        <a class="navbar--item-link navbar--item-link-bold" th:if="${username}"
+                            href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
     <div id="content">
+        <!-- Content goes here -->
     </div>
 </body>
+</html>

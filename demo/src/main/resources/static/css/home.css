@@ -1,0 +1,48 @@
+.header {
+    height: 40px;
+    background-image: linear-gradient(0, blue, cyan);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-list{
+    list-style: none;
+    padding-left: 0;
+}
+
+.navbar--item {
+    margin: 0 8px;
+    position: relative;
+}
+
+.navbar--item,
+.navbar--item-link,
+.navbar--item-username {
+    display: inline-block;
+    font-size: 2.5rem;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.navbar--item-username {
+    position: relative;
+}
+
+.navbar--item-link-bold {
+    font-weight: 400;
+}
+
+.navbar--item-spilit::after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-left: 2px solid #fff;
+    height: 25px;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
